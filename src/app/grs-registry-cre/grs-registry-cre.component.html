@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<div class="container main" >
+
+    <div class="row">
+        <div class="col-3 main-text">
+            Create customer registry
+        </div>
+    </div>
+    
+
+
+
+    <form [formGroup]="form">
+
+        <div formArrayName="registriesFormArray">
+
+            <div class="row justify-content-start">
+
+                <div class="col-3 form-group formfield" id="firstnamefield">
+                    
+                    <input maxlength="15" (input)="NameControll()" type="text" [formControlName]="1" name="firstname"
+                    id="firstname" size="40" required>
+                    <label alt="firstName" for="firstname" placeholder="firstName">First name</label>
+                    <div class="alert-danger" *ngIf="first_name_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+
+                <div class="col-3 form-group formfield" id="lastnamefield">
+                    <input maxlength="15" (input)="NameControll()" type="text" [formControlName]="2" name="lastname"
+                        id="lastname" size="40" required>
+                    <label alt="Name" for="lastname" placeholder="lastName">Last Name</label>
+                    <div class="alert-danger" *ngIf="last_name_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-3 form-group formfield" id="emailfield">
+                    <input maxlength="35" (input)="EmailControll()" type="email" [formControlName]="3" name="email"
+                        id="email" size="40" required>
+                    <label alt="email" for="email" placeholder="email">Email</label>
+                    <div class="alert-danger" *ngIf="email_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+
+
+                <div class="col-3 form-group formfield" id="zipfield">
+                    <input maxlength="10" (input)="ZipControll()" type="tel" [formControlName]="4" name="zip" id="zip"
+                        required>
+                    <label alt="zip" for="zip" placeholder="zip">Zip</label>
+                    <div class="alert-danger" *ngIf="zip_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-start">
+                <div class="col-3 form-group formfield" id="addressfield">
+                    <input maxlength="25" (input)="ZipControll()" type="address" [formControlName]="5" name="address"
+                        id="address" size="40" required>
+                    <label alt="Address" for="address" placeholder="address">Address</label>
+                    <div class="alert-danger" *ngIf="address_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+
+
+                <div class="col-3 form-group formfield" id="telnofield">
+                    <input maxlength="15" (input)="TelControll()" type="tel" [formControlName]="6" name="telNo" id="telNo"
+                        size="40" required>
+                    <label alt="telNo" for="telNo" placeholder="telNo">Tel No.</label>
+                    <div class="alert-danger" *ngIf="telNo_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-start">
+                <div class="col-3 form-group formfield" id="regdatefield">
+                    <input type="date" (click)="DateControll()" [formControlName]="8" name="registrationDate"
+                        id="registrationDate" required>
+                    <label alt="registrationDate" for="registrationDate" placeholder="registrationDate">Registration
+                        Date:</label>
+                    <div class="alert-danger" *ngIf="registrationDate_myError">
+                        <strong>Error!</strong> My error
+                    </div>
+                </div>
+
+
+                <div class="col-3 form-group formfield" id="pwdfield">
+                    <input maxlength="12" (input)="pwdControl()" type="password" [formControlName]="9" name="mpwd"
+                        id="mpwd" required formControlName="mpwd" [style.color]="styleExp">
+                    <label alt="mpwd" for="mpwd" placeholder="mpwd">Password:</label>
+
+                </div>
+
+            </div>
+
+            <div class="col-3">
+
+                <div *ngIf="readyToSave; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <button class="btn-sm" (click)="create()">Create</button>
+                    <button class="btn-sm" (click)="updateRec()">Update</button> 
+                </ng-template>
+                <ng-template #elseBlock>
+                    <button class="btn-sm" disabled="yes">Create</button>
+                    <button class="btn-sm" disabled="yes">Update</button>
+                </ng-template>
+            </div>
+        </div>
+    </form>
+</div>
+<div class={{alertStyle}}>
+    <strong>{{alertStrongMessage}}</strong>{{alertMessage}}
+</div>
+
+
+
+<div class="container lover-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio, modi unde
+    animi
+    praesentium fugit
+    qui cumque. Ullam, quis consequatur.
+</div>
+
+<div class="footer">
+    hello
+</div>
+
+</html>

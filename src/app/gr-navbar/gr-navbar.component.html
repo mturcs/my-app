@@ -1,0 +1,104 @@
+<!-- your navs bound to current route fragments -->
+
+
+<!-- This is cycled format
+
+<ul ngbNav [activeId]="route.fragment | async" class="nav-tabs">
+
+
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+
+
+        <a ngbNavLink [routerLink]="link.fragment">{{ link.title }} </a>
+        
+        
+
+    </li>
+
+    
+
+</ul>
+-->
+
+
+
+
+
+
+<div class="main-nav">
+    <div ngbDropdown>
+        <div class="nav-row">
+            <div class="main-title">
+                <div class="card"
+                    style="width: 15.5rem; height: auto; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
+                    Welcome in Grocery Shop
+                </div>
+                <div class="card"
+                    style="width: 15.5rem; height: auto; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
+
+                    {{loggedInUserName}}
+                </div>
+                <div class="card"
+                    style="width: 15.5rem; height: 1.2em; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
+                    {{ time | async }}
+                </div>
+                <div class="login-card">
+                    <app-grs-login (login)="loggedInUser($event)"></app-grs-login>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="main-title">
+                <div class="nav-item" ngbDropdown>
+                    <a class="nav-link dropdown-toggle" id="navbarScrollingReg" role="button" ngbDropdownToggle>
+                        Registry
+                    </a>
+                    
+                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingReg">
+                        <li ngbDropdownItem>
+                            <a class="dropdown-item" [routerLink]="links[0].fragment">{{ links[0].title }} </a>
+                        </li>
+                        <li ngbDropdownItem>
+                            <a class="dropdown-item" [routerLink]="links[1].fragment">{{ links[1].title }} </a>
+                        </li>
+                        <li ngbDropdownItem>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li ngbDropdownItem>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item" ngbDropdown>
+                    <a class="nav-link dropdown-toggle" id="navbarScrollingStore" role="button" ngbDropdownToggle>
+                        Store
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingStore">
+                        <li ngbDropdownItem>
+                            <a class="dropdown-item" [routerLink]="links[2].fragment">{{ links[2].title }} </a>
+                        </li>
+                        <li ngbDropdownItem>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li ngbDropdownItem>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!--
+<app-grs-login (login)="loggedInUser($event)"></app-grs-login>
+-->
+<!-- and an actual outlet elsewhere -->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    
+    
+    <div class="container table-flex">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Zip</th>
+                    <th>Telephone</th>
+                    <th>Registered</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr [ngClass]="{'table-primary' : i == selectedRow}" *ngFor="let item of mres ; index as i"
+                    (click)="rowSelected(item,i)" (mouseover)="rowHovered(item,i)">
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.zip}}</td>
+                    <td>{{item.telNo}}</td>
+                    <td>{{item.registrationDate}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="container footer">
+
+        <button class="btn-sm footer-button" (click)="deleteRec()">Delete</button>
+    </div>
+
+
+    <app-grs-registry-cre [GrsRegistryInput]="GrsRegistryFormSelected" [GrsRegistryInputForm]="form"
+        [IsSelected]="IsSelected">
+
+
+        {{GrsRegistryFormSelected}}
+
+
+    </app-grs-registry-cre>
+
+
+
+</html>

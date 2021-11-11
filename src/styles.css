@@ -1,0 +1,277 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    background-color: #53de11;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 18%;
+    background-color: #86af49;
+    color: black;
+    padding: 10px
+}
+.login-card {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em; 
+    height: 4.5em
+    
+
+}
+.main-nav {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+     
+}
+
+.nav-row {
+    display:flex;
+    flex-direction:column;
+     
+}
+.dropdown-menu {
+    
+    background-color: #86af49;
+}
+
+.dropdown-item,.dropdown-toggle {
+    
+    color: darkblue;
+}
+
+
+.main-title {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em; 
+    height: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em 
+}
+
+.header-text {
+    color: #f5f107;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    background-color: orange;
+    padding-top: 8px;
+    height: 250px;
+    width: 170px;
+}
+
+.login-tab {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    background-color: #d4e7a0c7;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 80%;
+    background-color: #d4e7a0c7;
+    padding: 0;
+    color: black;
+}
+
+.lover-main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #d4e7a0c7;
+    padding: 0;
+    color: black;
+}
+
+.main-text {
+    color: #757677;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large
+}
+
+.nav-item {
+    display: flex;
+    color: aliceblue;
+    flex-direction: row; 
+    font-size: 0.6em;  
+    
+}
+
+.alert-blank {
+    background-color: #d4e7a0c7;
+    font-size: 2em;
+    padding: 0;
+}
+
+.table-flex {
+    display: flex;
+    flex-direction: row;
+    background-color: #d5e1df;
+    color: black;
+    max-height: 50vh;
+    min-height: 50vh;
+    width: 100%;
+    font-size: 0.8em;
+    overflow: auto;
+    padding: 0;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #aab697;
+    z-index: 2;
+}
+
+.sticky-table-head {
+    display: flex;
+    position: sticky;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    /* <-- this is the fix */
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    background-color: purple;
+    height: 260px;
+    width: 30%;
+}
+
+input:placeholder-shown {
+    border: 1px solid tomato;
+    font-size: 150%;
+}
+
+.container_table {
+    position: relative;
+    top: 30;
+    left: 20;
+    border-style: double;
+    border-color: #9d9fa0;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px #9d9fa0
+}
+
+.formfield {
+    position: relative;
+    float: left;
+    margin: auto;
+    border: 1px;
+    font-size: 1em;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    height: 8%;
+    background-color: #86af49;
+    color: black;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-button {
+    height: 50%;
+    font-size: 0.8em;
+}
+
+.footer-button:hover {
+    box-shadow: 10px 10px 10px #688839
+}
+
+.alert {
+    position: relative;
+    font-size: 1em;
+    border-radius: 0.5em;
+    padding: 0;
+}
+
+.formfield>input,
+.formfield>label {
+    padding: 0.1em;
+    margin: 0.5em;
+    width: 100%
+}
+
+.formfield>input {
+    border: 1px solid #757677;
+    border-radius: 0.2em;
+    outline: none;
+    color: #757677
+}
+
+.formfield>label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2;
+    color: #757677;
+}
+
+input:focus+label,
+input:valid+label {
+    border-radius: 0.2em;
+    font-size: 0.6em;
+    width: auto;
+    height: 1.3em;
+    padding: 0px 0.5em 0px 0.5em;
+    margin: 0px;
+    /*outline: 1px solid red; /*for debugigng purposes only*/
+    background: #b5e7a0c7;
+    transition: 0.5s ease-in-out;
+    top: 0em;
+    left: 4em;
+}
+
+input:focus {
+    background-color: lightblue;
+}
+
+.btn-sm {
+    top: 0.2em;
+    bottom: 2em;
+    color: darkblue;
+    height:5em
+}
+
+
+/* to disable calendar picker icon
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+*/
+
+html,
+body {
+    height: 100%;
+}
