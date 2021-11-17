@@ -153,7 +153,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
     this.mregistry['telNo'] = this.form.controls.registriesFormArray.value[6]
     this.mregistry['registrationDate'] = this.form.controls.registriesFormArray.value[8]
     this.mregistry['custId'] = hashCustId  // has to be set by the increment of last custId
-    this.mregistry['pwd'] = hashPassWd
+    this.mregistry['pwd'] = 'Aa34567('
 
 
 
@@ -198,6 +198,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
   pwdControl() {
 
     this.mpwd = this.form.value.registriesFormArray[9]
+    
     this.styleExp = "black"
     this.myError = false;
     this.mpwd_myError = false;

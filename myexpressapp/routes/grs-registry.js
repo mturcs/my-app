@@ -62,7 +62,13 @@ router.post('/update', function (req, res, next) {
     const mOptions = '';
     grsRegistry.findByIdAndUpdate(mId, mQuery, mOptions, function (err, mresp) {
        res.send({ "Message": "Updated successfully" })
+       console.log(mQuery,mId)
+       if (err) {
+        console.log("MONOERR",err)
+        
+    }
     })
+    
 })
 
 

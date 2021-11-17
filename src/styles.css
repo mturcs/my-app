@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -26,44 +23,45 @@
     color: black;
     padding: 10px
 }
+
 .login-card {
     display: flex;
     flex-direction: row;
-    gap: 0.5em; 
+    gap: 0.5em;
     height: 4.5em
-    
-
 }
+
 .main-nav {
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-     
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .nav-row {
-    display:flex;
-    flex-direction:column;
-     
+    display: flex;
+    flex-direction: column;
 }
+
 .dropdown-menu {
-    
     background-color: #86af49;
 }
 
-.dropdown-item,.dropdown-toggle {
-    
+.dropdown-item {
     color: darkblue;
 }
 
+.dropdown-toggle {
+    color: darkblue;
+    font-size: 1.9em;
+}
 
 .main-title {
     display: flex;
     flex-direction: row;
-    gap: 0.5em; 
+    gap: 0.5em;
     height: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em 
+    font-size: 1em
 }
 
 .header-text {
@@ -87,7 +85,6 @@
     flex-direction: row;
     margin-left: auto;
     background-color: #d4e7a0c7;
-
 }
 
 .main {
@@ -117,9 +114,8 @@
 .nav-item {
     display: flex;
     color: aliceblue;
-    flex-direction: row; 
-    font-size: 0.6em;  
-    
+    flex-direction: row;
+    font-size: 0.6em;
 }
 
 .alert-blank {
@@ -260,7 +256,7 @@ input:focus {
     top: 0.2em;
     bottom: 2em;
     color: darkblue;
-    height:5em
+    height: 5em
 }
 
 
