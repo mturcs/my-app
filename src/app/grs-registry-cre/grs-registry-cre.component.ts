@@ -84,7 +84,7 @@ export class GrsRegistryCreComponent implements OnInit {
   mregistrationDate = new Date
   mcustId = "";
   styleExp = "black";
-
+  dateCtrl="";
 
   @Input() GrsRegistryInput: registrySch = GrsRegistrySch
   @Input() GrsRegistryInputForm = this.form
@@ -153,7 +153,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
     this.mregistry['telNo'] = this.form.controls.registriesFormArray.value[6]
     this.mregistry['registrationDate'] = this.form.controls.registriesFormArray.value[8]
     this.mregistry['custId'] = hashCustId  // has to be set by the increment of last custId
-    this.mregistry['pwd'] = 'Aa34567('
+    this.mregistry['pwd'] = hashPassWd
 
 
 
@@ -288,7 +288,8 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
   }
 
   DateControll() {
-
+    this.dateCtrl=this.form.controls.registriesFormArray.value[8]
+console.log("DateFormcontr",this.dateCtrl)
   }
 
 

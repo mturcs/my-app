@@ -1,10 +1,22 @@
 var express = require('express');
 var router = express.Router();
-
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+
+/* Local DB */
+//mongoose.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+
+/* ATLAS Cloud DB */
+const uri = "mongodb+srv://mdb:fR998eendom@cluster0.sswh7.mongodb.net/db?retryWrites=true&w=majority";
+mongoose.connect(uri, { useNewUrlParser: true });
+
+
+
+
 
 const Tank = mongoose.model('Book1', { Name: String, Size: String });
+
+
+
 
 
 

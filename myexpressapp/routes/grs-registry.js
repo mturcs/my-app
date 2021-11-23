@@ -4,11 +4,18 @@ var Promise = require('bluebird');
 
 const mongoose = require('mongoose');
 // mongose_promise for getting array via read request
-const mongoosePromise = Promise.promisifyAll(require('mongoose'));
+//const mongoosePromise = Promise.promisifyAll(require('mongoose'));
+
+/* local DB  */
+//mongoose.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+//mongoosePromise.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
 
 
-mongoose.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
-mongoosePromise.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+/* ATLAS Cloud DB */
+const uri = "mongodb+srv://mdb:fR998eendom@cluster0.sswh7.mongodb.net/db?retryWrites=true&w=majority";
+mongoose.connect(uri, { useNewUrlParser: true });
+
+//mongoosePromise.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
 
 grsRegistry = require('./models/grs-registry-sch')
 grsLoggedIn = require('./models/logged-in-sch')
