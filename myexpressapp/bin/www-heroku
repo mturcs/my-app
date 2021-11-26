@@ -8,14 +8,6 @@ var app = require('../app');
 var debug = require('debug')('express-locallibrary-tutorial:server');
 var http = require('http');
 
-//var wiki = require('../wiki.js');
-//app.use('/wiki', wiki);
-
-/**
- * Get port from environment and store in Express.
- */
-
-// Serve only the static files form the dist directory
 app.use(express.static(__dirname+'/dist/my-app'));
 
 app.get('/*', (req, res) =>
