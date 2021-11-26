@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node ./myexpressapp/bin/www-heroku",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -11,8 +11,6 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.0.0",
-    "@angular/cli": "~13.0.1",
-    "@angular/compiler-cli": "~13.0.0",
     "@angular/cdk": "^13.0.1",
     "@angular/common": "~13.0.0",
     "@angular/compiler": "~13.0.0",
@@ -32,8 +30,7 @@
     "nodemon": "^2.0.15",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "typescript": "~4.4.3"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.0.1",
