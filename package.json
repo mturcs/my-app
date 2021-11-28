@@ -52,7 +52,8 @@
   "heroku-postbuild": "ng build --prod",
   "engines": {
     "node": "16.13.0",
-    "npm": "8.1.0",
+    "npm": "8.1.0"
+  },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.",
   "main": "karma.conf.js",
   "author": "",
