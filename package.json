@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "node ./server.js",
+    "start": "node ./myexpressapp/bin/www-heroku",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
