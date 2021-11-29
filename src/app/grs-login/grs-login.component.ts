@@ -136,7 +136,8 @@ export class GrsLoginComponent implements OnInit {
 
   createLoginRec(loggedInRec: Array<loggedSession>) {
 
-    this.http.post<object>('http://localhost:3000/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
+    //this.http.post<object>('http://localhost:3000/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
+    this.http.post<object>('/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
 
   }
 
