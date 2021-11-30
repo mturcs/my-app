@@ -3,12 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 var grsRegistryRouter = require('./routes/grs-registry');
 var cors = require('cors');
 var app = express();
+
+/* local DB  */
+//mongoose.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+//mongoosePromise.connect('mongodb://localhost:27017/db', { useNewUrlParser: true });
+
+
+/* ATLAS Cloud DB */
+const uri = "mongodb+srv://mdb:fR998eendom@cluster0.sswh7.mongodb.net/db?retryWrites=true&w=majority";
+
+var mongoDB = process.env.MONGODB_URI || uri;
+
+mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 // this is to enable cors on server side
 //https://stackoverflow.com/questions/51640206/angular-client-enable-cors
