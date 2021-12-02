@@ -136,6 +136,8 @@ export class GrsLoginComponent implements OnInit {
 
   createLoginRec(loggedInRec: Array<loggedSession>) {
 
+
+    //this.http.post<object>('http://localhost:3000/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
     //this.http.post<object>('http://localhost:80/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
     //this.http.post<object>('/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
 
@@ -151,7 +153,7 @@ export class GrsLoginComponent implements OnInit {
       setTimeout(() => {
         let loginName = " "
         this.http.get<[registrySch]>
-          ('https://my-appserver.herokuapp.com:80/app/qemail/' + mQuerystring).subscribe(function (data) {
+          ('http://mturcs-my-app.herokuapp.com/app/qemail/' + mQuerystring).subscribe(function (data) {
             //this.loginName = data[0].first_name + " " + data[0].last_name
             resolve(data)
             reject("DB unreachable")
