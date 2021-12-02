@@ -153,7 +153,7 @@ export class GrsLoginComponent implements OnInit {
       setTimeout(() => {
         let loginName = " "
         this.http.get<[registrySch]>
-          ('http://mturcs-my-app.herokuapp.com/app/qemail/' + mQuerystring).subscribe(function (data) {
+          ('//mturcs-my-app.herokuapp.com/app/qemail/' + mQuerystring).subscribe(function (data) {
             //this.loginName = data[0].first_name + " " + data[0].last_name
             resolve(data)
             reject("DB unreachable")
