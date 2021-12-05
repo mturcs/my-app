@@ -22,6 +22,8 @@ const httpOptions = {
   })
 };
 
+
+
 interface loggedSession {
   cust_id: String,
   logged_in_time: Number,
@@ -44,13 +46,14 @@ export class GrsLoginComponent implements OnInit {
 
   loggedIn = "false"
   showMessage: String = " "
-  
+
   loggedUserName: string = "Üres"
   loggedUserNameExp = "Üresexp"
   hashSessionId: String = " "
   hashPassWd: String = " "
   userName: String = " "
   invalidPwd: Boolean = false
+  locRestApiUrl: String = " "
 
   mresult: Array<registrySch> = []
   qvalue: Array<registrySch> = []
@@ -84,6 +87,8 @@ export class GrsLoginComponent implements OnInit {
 
   ) {
 
+    
+
     this.mresult = [
       GrsRegistrySch
     ]
@@ -108,7 +113,7 @@ export class GrsLoginComponent implements OnInit {
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
-    
+
   }
 
 
@@ -139,7 +144,7 @@ export class GrsLoginComponent implements OnInit {
 
     //this.http.post<object>('http://localhost:3000/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
     //this.http.post<object>('http://localhost:80/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
-    //this.http.post<object>('/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
+    this.http.post<object>(GlobalVar.RestApiUrl + '/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
 
   }
 
@@ -153,7 +158,8 @@ export class GrsLoginComponent implements OnInit {
       setTimeout(() => {
         let loginName = " "
         this.http.get<[registrySch]>
-          ('//mturcsrestapi.herokuapp.com/app/qemail/' + mQuerystring).subscribe(function (data) {
+        ////mturcsrestapi.herokuapp.com
+          (GlobalVar.RestApiUrl+'/app/qemail/' + mQuerystring).subscribe(function (data) {
             //this.loginName = data[0].first_name + " " + data[0].last_name
             resolve(data)
             reject("DB unreachable")

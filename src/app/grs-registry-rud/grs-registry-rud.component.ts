@@ -180,7 +180,7 @@ mregistry = {
 
     const mQueryString = '?_id=' + this.deleteItemId
     this.http.post<object>
-      ('http://localhost:3000/app/delete' + mQueryString, httpOptions).subscribe()
+      (GlobalVar.RestApiUrl + '/app/delete' + mQueryString, httpOptions).subscribe()
 
   }
 
@@ -195,7 +195,7 @@ mregistry = {
 
     this.http.get<any>
 
-      ('http://localhost:3000/app/read').subscribe(data => {
+      (GlobalVar.RestApiUrl + '/app/read').subscribe(data => {
         this.mres = data
         // console.log(this.mres)
 

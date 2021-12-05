@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, FormArray, Validators, Form } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
+import { GlobalVar } from '../app.component';
 
 
 import * as sha512 from 'js-sha512';
@@ -158,7 +159,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
 
 
     this.http.post<object>
-      ('http://localhost:3000/app/create', this.mregistry, httpOptions).subscribe()
+      (GlobalVar.RestApiUrl + '/app/create', this.mregistry, httpOptions).subscribe()
     this.saveSuccess = true
     this.doAlert = true;
     this.alertMessage = "Your data saved.";
@@ -188,7 +189,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
     this.mregistry['pwd'] = hashPassWd
 
     this.http.post<object>
-      ('http://localhost:3000/app/update' + mQueryString, this.mregistry, httpOptions).subscribe()
+      (GlobalVar.RestApiUrl + '/app/update' + mQueryString, this.mregistry, httpOptions).subscribe()
 
 
 
