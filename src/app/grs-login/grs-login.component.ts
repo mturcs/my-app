@@ -53,7 +53,7 @@ export class GrsLoginComponent implements OnInit {
   hashPassWd: String = " "
   userName: String = " "
   invalidPwd: Boolean = false
-  locRestApiUrl: String = " "
+  
 
   mresult: Array<registrySch> = []
   qvalue: Array<registrySch> = []
@@ -154,11 +154,13 @@ export class GrsLoginComponent implements OnInit {
   uidCheckPromise(uid: String) {
     let data: Array<registrySch>
     let mQuerystring = '?email=' + uid
+    console.log("RestAPI",GlobalVar.RestApiUrl)
     this.uidCheck = new Promise<Array<registrySch>>((resolve, reject) => {
       setTimeout(() => {
         let loginName = " "
         this.http.get<[registrySch]>
         ////mturcsrestapi.herokuapp.com
+        
           (GlobalVar.RestApiUrl+'/app/qemail/' + mQuerystring).subscribe(function (data) {
             //this.loginName = data[0].first_name + " " + data[0].last_name
             resolve(data)
