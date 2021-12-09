@@ -29,17 +29,15 @@
     <div ngbDropdown>
         <div class="nav-row">
             <div class="main-title">
-                <div class="card"
-                    style="width: 15.5rem; height: auto; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
-                    Hello here in Grocery Shop!!!
+                <div class="card">
+                    
+                        Hello here in Grocery Shop!!!
+                    
                 </div>
-                <div class="card"
-                    style="width: 15.5rem; height: auto; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
-
+                <div class="card">
                     {{loggedInUserName}}
                 </div>
-                <div class="card"
-                    style="width: 15.5rem; height: 1.2em; background-color: rgb(1, 82, 1); color: rgb(252, 252, 6);">
+                <div class="card">
                     {{ time | async }}
                 </div>
                 <div class="login-card">
@@ -54,7 +52,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarScrollingReg" role="button" ngbDropdownToggle>
                         Registry
                     </a>
-                    
+
                     <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingReg">
                         <li ngbDropdownItem>
                             <a class="dropdown-item" [routerLink]="links[0].fragment">{{ links[0].title }} </a>
