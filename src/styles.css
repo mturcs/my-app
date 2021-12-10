@@ -3,9 +3,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
     padding: 0;
+    border-radius: 25px;
     background-color: #53de11;
 }
 
@@ -18,10 +19,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 18%;
+    height: 21%;
     background-color: #86af49;
     color: black;
-    padding: 10px
+    padding: 15px
 }
 
 .login-card {
@@ -33,12 +34,11 @@
 
 .card {
     width: auto; 
-    height: auto; 
+    height: 18%;
     background-color: rgb(1, 82, 1); 
-    color: rgb(252, 252, 6);
     color: #f5f107;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.6em;
+    font-size: small
 }
 
 
@@ -65,16 +65,16 @@
 
 .dropdown-toggle {
     color: darkblue;
-    font-size: 1.9em;
+    font-size: medium
 }
 
 .main-title {
     display: flex;
     flex-direction: row;
     gap: 0.5em;
-    height: 1.2em;
+    height: auto;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em
+    font-size:medium
 }
 
 .header-text {
@@ -112,7 +112,7 @@
 .lover-main {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height:100%;
     background-color: #d4e7a0c7;
     padding: 0;
     color: black;
@@ -144,9 +144,9 @@
     color: black;
     max-height: 50vh;
     min-height: 50vh;
-    width: 100%;
+    width: auto;
     font-size: 0.8em;
-    overflow: auto;
+    overflow:auto;
     padding: 0;
 }
 
