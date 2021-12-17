@@ -44,8 +44,8 @@ export class GlobalVar {
   public static TimedOut = true
   // public static RestApiUrl = process.env.RESTAPI_URL || 'http://localhost:3000' // Angular process not working bug?
 
-  public static RestApiUrl = '//mturcsrestapi.herokuapp.com'
-  //public static RestApiUrl = 'http://localhost:3000'  
+  //public static RestApiUrl = '//mturcsrestapi.herokuapp.com'
+  public static RestApiUrl = 'http://localhost:3000'  
 }
 
 

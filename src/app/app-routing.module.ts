@@ -1,5 +1,6 @@
 import { GrsRegistryCreComponent } from './grs-registry-cre/grs-registry-cre.component';
 import { GrsRegistryRudComponent } from './grs-registry-rud/grs-registry-rud.component';
+import { GrsStoreComponent } from './grs-store/grs-store.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +13,7 @@ import { GrGuardGuard } from './gr-guard.guard';
 const routes: Routes = [
   { path: 'cre', component: GrsRegistryCreComponent  },
   { path: 'rud', component: GrsRegistryRudComponent, canActivate: [GrGuardGuard] },
+  { path: 'store', component: GrsStoreComponent, canActivate: [GrGuardGuard] },
   { path: 'login', component: GrsLoginComponent }
 ];
 

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<div class="container main">
+
+    <div class="row">
+        <div class="col-3 main-text">
+            Add new store item
+        </div>
+    </div>
+
+
+
+
+    <form [formGroup]="form">
+
+        <div formArrayName="storeFormArray">
+
+            <div class="row justify-content-start">
+
+
+                <div class="col-3 form-group formfield">
+                    <input maxlength="4" (input)="article_idcontroll()" type="number" [formControlName]="1" id=mstore[1]
+                        size="4" required>
+                    <label alt=mstore[1] for=mstore[1] placeholder=mstore[1]>Article ID</label>
+                </div>
+                <div class="col-3 form-group formfield">
+                    <input maxlength="4" (input)="article_idcontroll()" type="number" [formControlName]="2" id=mstore[2]
+                        size="4" required>
+                    <label alt=mstore[2] for=mstore[1] placeholder=mstore[2]>Supplier ID</label>
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-start">
+
+
+                <div class="col-3 form-group formfield">
+                    <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="3" id=mstore[3]
+                        size="20" required>
+                    <label alt=mstore[3] for=mstore[3] placeholder=mstore[3]>Article Name</label>
+                </div>
+                <div class="col-3 form-group formfield">
+                    <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="4" id=mstore[4]
+                        size="20" required>
+                    <label alt=mstore[4] for=mstore[4] placeholder=mstore[3]>Article Size</label>
+                </div>
+
+
+
+            </div>
+
+            <div class="row justify-content-start">
+
+
+                <div class="col-3 form-group formfield">
+                    <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="5" id=mstore[5]
+                        size="20" required>
+                    <label alt=mstore[5] for=mstore[5] placeholder=mstore[5]>Article Quality</label>
+                </div>
+                <div class="col-3 form-group formfield">
+                    <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="6" id=mstore[6]
+                        size="20" required [(ngModel)]="model" [ngbTypeahead]="search">
+                    <label alt=mstore[6] for=mstore[6] placeholder=mstore[6]>Measure</label>
+                </div>
+
+
+
+            </div>
+
+            
+
+            <div class="col-3">
+
+                <div *ngIf="readyToSave; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <button class="btn-sm" (click)="create()">Create</button>
+                    <button class="btn-sm" (click)="updateRec()">Update</button>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <button class="btn-sm" disabled="yes">Create</button>
+                    <button class="btn-sm" disabled="yes">Update</button>
+                </ng-template>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
+
+
+<div class="container lover-main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos optio, modi unde
+    animi
+    praesentium fugit
+    qui cumque. Ullam, quis consequatur.
+</div>
+
+<div class="footer">
+    hello
+</div>
+
+</html>

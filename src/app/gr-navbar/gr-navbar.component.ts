@@ -27,6 +27,8 @@ export class GrNavbarComponent implements OnInit {
     { title: 'Create', fragment: 'cre' },
     { title: 'Update/Delete', fragment: 'rud' },
     { title: 'Add Item', fragment: 'rud' },
+    { title: 'Store', fragment: 'store' }
+
 
     
   ];

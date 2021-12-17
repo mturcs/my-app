@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GrNavbarComponent } from './gr-navbar/gr-navbar.component';
 import { GrsLoginComponent } from './grs-login/grs-login.component';
 import { FormsModule } from '@angular/forms';
+import { GrsStoreComponent } from './grs-store/grs-store.component';
+
 
 
 //import { SizerComponent } from './sizer/sizer.component';
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     GrsRegistryCreComponent,
     GrsRegistryRudComponent,
     GrNavbarComponent,
-    GrsLoginComponent
+    GrsLoginComponent,
+    GrsStoreComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
   ],
   providers: [],

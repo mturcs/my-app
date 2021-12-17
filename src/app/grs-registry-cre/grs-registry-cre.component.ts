@@ -159,7 +159,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
 
 
     this.http.post<object>
-      (GlobalVar.RestApiUrl + '/app/create', this.mregistry, httpOptions).subscribe()
+      (GlobalVar.RestApiUrl + '/app/reg/create', this.mregistry, httpOptions).subscribe()
     this.saveSuccess = true
     this.doAlert = true;
     this.alertMessage = "Your data saved.";
@@ -189,7 +189,7 @@ var hashPassWd = sha512.sha512_224(this.form.controls.registriesFormArray.value[
     this.mregistry['pwd'] = hashPassWd
 
     this.http.post<object>
-      (GlobalVar.RestApiUrl + '/app/update' + mQueryString, this.mregistry, httpOptions).subscribe()
+      (GlobalVar.RestApiUrl + '/app/reg/update' + mQueryString, this.mregistry, httpOptions).subscribe()
 
 
 

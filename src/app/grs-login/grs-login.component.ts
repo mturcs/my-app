@@ -144,7 +144,7 @@ export class GrsLoginComponent implements OnInit {
 
     //this.http.post<object>('http://localhost:3000/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
     //this.http.post<object>('http://localhost:80/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
-    this.http.post<object>(GlobalVar.RestApiUrl + '/app/create/loginsession', this.loggedInRec, httpOptions).subscribe()
+    this.http.post<object>(GlobalVar.RestApiUrl + '/app/reg/create/loginsession', this.loggedInRec, httpOptions).subscribe()
 
   }
 
@@ -154,14 +154,14 @@ export class GrsLoginComponent implements OnInit {
   uidCheckPromise(uid: String) {
     let data: Array<registrySch>
     let mQuerystring = '?email=' + uid
-    console.log("RestAPI",GlobalVar.RestApiUrl)
+    
     this.uidCheck = new Promise<Array<registrySch>>((resolve, reject) => {
       setTimeout(() => {
         let loginName = " "
         this.http.get<[registrySch]>
         ////mturcsrestapi.herokuapp.com
         
-          (GlobalVar.RestApiUrl+'/app/qemail/' + mQuerystring).subscribe(function (data) {
+          (GlobalVar.RestApiUrl+'/app/reg/qemail/' + mQuerystring).subscribe(function (data) {
             //this.loginName = data[0].first_name + " " + data[0].last_name
             resolve(data)
             reject("DB unreachable")
