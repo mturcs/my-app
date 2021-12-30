@@ -37,12 +37,12 @@
 
                 <div class="col-3 form-group formfield">
                     <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="3" id=mstore[3]
-                        size="20" required>
+                        size="20"  required [(ngModel)]="modelArticleName" [ngbTypeahead]="searchArticleName">
                     <label alt=mstore[3] for=mstore[3] placeholder=mstore[3]>Article Name</label>
                 </div>
                 <div class="col-3 form-group formfield">
                     <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="4" id=mstore[4]
-                        size="20" required>
+                        size="20" required [(ngModel)]="modelArticleSize" [ngbTypeahead]="searchArticleSize">
                     <label alt=mstore[4] for=mstore[4] placeholder=mstore[3]>Article Size</label>
                 </div>
 
@@ -55,12 +55,12 @@
 
                 <div class="col-3 form-group formfield">
                     <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="5" id=mstore[5]
-                        size="20" required>
+                        size="20" required [(ngModel)]="modelArticleQuality" [ngbTypeahead]="searchArticleQuality">
                     <label alt=mstore[5] for=mstore[5] placeholder=mstore[5]>Article Quality</label>
                 </div>
                 <div class="col-3 form-group formfield">
                     <input maxlength="20" (input)="article_idcontroll()" type="text" [formControlName]="6" id=mstore[6]
-                        size="20" required [(ngModel)]="model" [ngbTypeahead]="search">
+                        size="20" required [(ngModel)]="modelArticleMeasure" [ngbTypeahead]="searchArticleMeasure">
                     <label alt=mstore[6] for=mstore[6] placeholder=mstore[6]>Measure</label>
                 </div>
 

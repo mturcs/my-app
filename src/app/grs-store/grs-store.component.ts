@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, FormArray, Validators, Form } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import { GlobalVar } from '../app.component';
-import {Observable, OperatorFunction} from 'rxjs';
-import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { Observable, OperatorFunction } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 
 
@@ -14,7 +14,7 @@ const httpOptions = {
   })
 };
 
-const measuresTypeahead = ['Kilogramm','Pieces','Box'];
+
 
 
 
@@ -52,6 +52,24 @@ const today = new Date();
 export class GrsStoreComponent implements OnInit {
 
   constructor(private http: HttpClient,) { }
+
+  mres = [storeSch]
+
+  /* typeahead */
+  articleNameTypeahead = [storeSch.article_name]
+  articleNameTypeaheadUniq = [storeSch.article_name]
+
+  articleSizeTypeahead = [storeSch.article_size]
+  articleSizeTypeaheadUniq = [storeSch.article_size]
+
+  articleQualityTypeahead = [storeSch.articlequality]
+  articleQualityTypeaheadUniq = [storeSch.articlequality]
+
+  articleMeasureTypeahead = [storeSch.measure]
+  articleMeasureTypeaheadUniq = [storeSch.measure]
+
+
+
 
   form = new FormGroup({
     storeFormArray: new FormArray([
@@ -101,14 +119,46 @@ export class GrsStoreComponent implements OnInit {
     measure: ""
   }
 
-  public model: any;
+  public modelArticleName: any;
+  public modelArticleSize: any;
+  public modelArticleQuality: any;
+  public modelArticleMeasure: any;
 
-  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+  /* typeahead */
+
+  
+
+  searchArticleName: OperatorFunction<String, readonly String[]> = (text$: Observable<String>) =>
     text$.pipe(
       debounceTime(200),
       distinctUntilChanged(),
       map(term => term.length < 2 ? []
-        : measuresTypeahead.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+        : this.articleNameTypeaheadUniq.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+  searchArticleSize: OperatorFunction<String, readonly String[]> = (text$: Observable<String>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.articleSizeTypeaheadUniq.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+  searchArticleQuality: OperatorFunction<String, readonly String[]> = (text$: Observable<String>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.articleQualityTypeaheadUniq.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+    
+  searchArticleMeasure: OperatorFunction<String, readonly String[]> = (text$: Observable<String>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.articleMeasureTypeaheadUniq.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
 
 
@@ -143,6 +193,8 @@ export class GrsStoreComponent implements OnInit {
   article_idcontroll() { }
 
 
+
+
   ngOnInit(): void {
 
     for (const [key, values] of Object.entries(storeSch)) {
@@ -150,9 +202,38 @@ export class GrsStoreComponent implements OnInit {
       this.storeFormArray.push(new FormControl(storeSch[key]));
     }
 
+    this.http.get<any>
+      (
+        GlobalVar.RestApiUrl + '/app/store/read').subscribe(data => {
+          this.mres = data
+          
+          this.mres.forEach(value => { this.articleNameTypeahead.push(value.article_name) })
+          this.articleNameTypeaheadUniq = [...new Set(this.articleNameTypeahead)];
+          
+          this.mres.forEach(value => { this.articleSizeTypeahead.push(value.article_size) })
+          this.articleSizeTypeaheadUniq = [...new Set(this.articleSizeTypeahead)];
+
+          this.mres.forEach(value => { this.articleQualityTypeahead.push(value.articlequality) })
+          this.articleQualityTypeaheadUniq = [...new Set(this.articleQualityTypeahead)];
+
+          this.mres.forEach(value => { this.articleMeasureTypeahead.push(value.measure) })
+          this.articleMeasureTypeaheadUniq = [...new Set(this.articleMeasureTypeahead)];
+
+          console.log("op.func typeahead", this.articleNameTypeaheadUniq, this.articleSizeTypeaheadUniq
+          ,this.articleQualityTypeaheadUniq,this.articleMeasureTypeaheadUniq)
+
+          
+        }
+        ).unsubscribe
+
+
+
+
 
 
   }
+
+
   ngDoCheck(): void {
     if (this.IsSelected) {
 
