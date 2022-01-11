@@ -169,6 +169,7 @@ export class GrsStoreComponent implements OnInit {
     this.mstore['article_size'] = this.form.controls.storeFormArray.value[4]
     this.mstore['articlequality'] = this.form.controls.storeFormArray.value[5]
     this.mstore['measure'] = this.form.controls.storeFormArray.value[6]
+    
     this.http.post<object>
       (GlobalVar.RestApiUrl + '/app/store/create', this.mstore, httpOptions).subscribe()
 
@@ -176,6 +177,7 @@ export class GrsStoreComponent implements OnInit {
 
   updateRec() {
     const mQueryString = '?_id=' + this.form.controls.storeFormArray.value[0]
+    console.log("key=",this.form.controls.storeFormArray.value[0])
     this.readyToSave = true
     this.mstore['article_id'] = this.form.controls.storeFormArray.value[1]
     this.mstore['supplier_id'] = this.form.controls.storeFormArray.value[2]
@@ -207,6 +209,8 @@ export class GrsStoreComponent implements OnInit {
         GlobalVar.RestApiUrl + '/app/store/read').subscribe(data => {
           this.mres = data
           
+          this.articleNameTypeahead = [];this.articleSizeTypeahead = []; this.articleQualityTypeahead = [] ; this.articleMeasureTypeahead = []
+
           this.mres.forEach(value => { this.articleNameTypeahead.push(value.article_name) })
           this.articleNameTypeaheadUniq = [...new Set(this.articleNameTypeahead)];
           

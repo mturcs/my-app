@@ -12,7 +12,10 @@ import { GrNavbarComponent } from './gr-navbar/gr-navbar.component';
 import { GrsLoginComponent } from './grs-login/grs-login.component';
 import { FormsModule } from '@angular/forms';
 import { GrsStoreComponent } from './grs-store/grs-store.component';
-
+import { GrsStoreRudComponent } from './grs-store-rud/grs-store-rud.component';
+import { GrsSupplyComponent } from './grs-supply/grs-supply.component';
+import { DynamicFormComponent } from './dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
 
 
 //import { SizerComponent } from './sizer/sizer.component';
@@ -25,7 +28,11 @@ import { GrsStoreComponent } from './grs-store/grs-store.component';
     GrsRegistryRudComponent,
     GrNavbarComponent,
     GrsLoginComponent,
-    GrsStoreComponent
+    GrsStoreComponent,
+    GrsStoreRudComponent,
+    GrsSupplyComponent,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent
   ],
   imports: [
     BrowserModule,
