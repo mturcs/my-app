@@ -4,6 +4,7 @@ import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase } from './question-base';
 import { TextboxQuestion } from './question-textbox';
 import { of } from 'rxjs';
+import { kMaxLength } from 'buffer';
 
 @Injectable()
 export class QuestionService {
@@ -29,28 +30,48 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'firstName',
         label: 'First name',
-        value: 'Bombasto',
+        type: 'text',
+        value: '',
         required: true,
-        order: 1
+        order: 1,
+        event: 'updateValue',
+        function: 'this.myFunct()'
+
       }),
 
       new TextboxQuestion({
         key: 'emailAddress',
         label: 'Email',
+        required: true,
         type: 'email',
         order: 2
       }),
       new TextboxQuestion({
         key: 'hallo',
         label: 'hallo',
-        type: 'email',
+        type: 'number',
         order: 0
+      }),
+      new TextboxQuestion({
+        key: 'valami',
+        label: 'valami',
+        type: 'text',
+        order: 3,
+        required: true
       })
 
     ];
 
     return of(questions.sort((a, b) => a.order - b.order));
   }
+  suplTest() {
+    console.log("Hallo")
+  }
+  myFunct() {
+    console.log("HALLO")
+  } 
+
+
 }
 
 

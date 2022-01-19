@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from '../question.service';
-import { QuestionBase } from '../question-base';
+import { QuestionService } from './question.service';
+import { QuestionBase } from './question-base';
+import { DynamicFormComponent } from './dynamic-form.component'
 import { Observable } from 'rxjs';
-import { DynamicFormComponent } from '../dynamic-form.component';
-import { DynamicFormQuestionComponent } from '../dynamic-form-question.component';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
+
 
 @Component({
   selector: 'app-grs-supply',
@@ -21,6 +22,22 @@ export class GrsSupplyComponent  {
   
 
   ngOnInit(): void {
+    
+  
+    
   }
 
+  
+
+}
+export class UsernameValidator {
+  static cannotContainSpace(control: AbstractControl) : ValidationErrors | null {
+      if((control.value as string).indexOf(' ') >= 0){
+          return {cannotContainSpace: true}
+      }
+
+      console.log("mycontroll")
+
+      return null;
+  }
 }

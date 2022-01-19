@@ -17,6 +17,8 @@ export class QuestionBase<T> {
       controlType?: string;
       type?: string;
       options?: {key: string, value: string}[];
+      event?: string;
+      function?: string
     } = {}) {
     this.value = options.value;
     this.key = options.key || '';

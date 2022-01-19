@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { QuestionBase } from './question-base';
 import { QuestionControlService } from './question-control.service';
+import { UsernameValidator } from './grs-supply.component';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -19,12 +20,19 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
+    this.form.controls["firstName"].addValidators([UsernameValidator.cannotContainSpace])
   }
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.getRawValue());
+    console.log("FORMVALUE",this.form.value["hallo"])
   }
+
+  
+
+  
 }
+
 
 
 /*

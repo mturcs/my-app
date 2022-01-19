@@ -14,8 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { GrsStoreComponent } from './grs-store/grs-store.component';
 import { GrsStoreRudComponent } from './grs-store-rud/grs-store-rud.component';
 import { GrsSupplyComponent } from './grs-supply/grs-supply.component';
-import { DynamicFormComponent } from './dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+import { DynamicFormComponent } from './grs-supply/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './grs-supply/dynamic-form-question.component';
 
 
 //import { SizerComponent } from './sizer/sizer.component';
