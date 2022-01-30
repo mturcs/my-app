@@ -10,7 +10,8 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
   selector: 'app-grs-supply',
   templateUrl: './grs-supply.component.html',
   providers:  [QuestionService],
-  styleUrls: ['./grs-supply.component.css']
+  styleUrls: ['./grs-supply.component.css'],
+  host: { class: '../../styles.css' }
 })
 export class GrsSupplyComponent  {
   questions$: Observable<QuestionBase<any>[]>;
@@ -33,6 +34,7 @@ export class GrsSupplyComponent  {
 export class UsernameValidator {
   static cannotContainSpace(control: AbstractControl) : ValidationErrors | null {
       if((control.value as string).indexOf(' ') >= 0){
+        
           return {cannotContainSpace: true}
       }
 

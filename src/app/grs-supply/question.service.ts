@@ -12,7 +12,9 @@ export class QuestionService {
   // TODO: get from a remote source of question metadata
   getQuestions() {
 
-    const questions: QuestionBase<string>[] = [
+    const toDay = new Date
+
+    const questionsOrig: QuestionBase<string>[] = [
 
       new DropdownQuestion({
         key: 'brave',
@@ -33,10 +35,7 @@ export class QuestionService {
         type: 'text',
         value: '',
         required: true,
-        order: 1,
-        event: 'updateValue',
-        function: 'this.myFunct()'
-
+        order: 1
       }),
 
       new TextboxQuestion({
@@ -49,6 +48,7 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'hallo',
         label: 'hallo',
+        required: true,
         type: 'number',
         order: 0
       }),
@@ -61,15 +61,50 @@ export class QuestionService {
       })
 
     ];
+    const questions: QuestionBase<string>[] = [
+
+      
+
+      new TextboxQuestion({
+        key: 'suplierName',
+        label: 'Suplier name',
+        type: 'text',
+        value: '',
+        required: true,
+        order: 1
+      }),
+
+      new TextboxQuestion({
+        key: 'suplierAddress',
+        label: 'Suplier address',
+        required: true,
+        type: 'text',
+        order: 2
+      }),
+      new TextboxQuestion({
+        key: 'registrationAddress',
+        label: 'Registration date',
+        required: true,
+        type: 'date',
+        order: 2
+      }),
+      new TextboxQuestion({
+        key: 'color',
+        label: 'color',
+        required: true,
+        type: 'color',
+        order: 2
+      }),
+
+    ];
+
 
     return of(questions.sort((a, b) => a.order - b.order));
   }
   suplTest() {
     console.log("Hallo")
   }
-  myFunct() {
-    console.log("HALLO")
-  } 
+  
 
 
 }
