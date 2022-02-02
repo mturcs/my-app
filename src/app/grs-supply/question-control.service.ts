@@ -31,7 +31,7 @@ export class QuestionControlService {
 */
     //new FormControl('firstName',Validators.pattern('HALLO'))
 
-console.log("question",questions)
+console.log("question",questions.keys)
 group["firstName"]= new FormControl('',Validators.minLength(5))
 group["valami"]= new FormControl('',Validators.minLength(6))
 

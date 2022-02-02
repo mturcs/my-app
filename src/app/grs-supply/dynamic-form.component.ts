@@ -14,25 +14,25 @@ export class DynamicFormComponent implements OnInit {
 
   @Input() questions: QuestionBase<string>[] | null = [];
   form!: FormGroup;
-  payLoad = '';
+  payLoad:Object = {};
 
   constructor(private qcs: QuestionControlService) {}
 
   ngOnInit() {
     this.form = this.qcs.toFormGroup(this.questions as QuestionBase<string>[]);
-    this.form.controls["firstName"].addValidators([UsernameValidator.cannotContainSpace])
+    this.form.controls["suplierAddress"].addValidators([UsernameValidator.cannotContainSpace])
   }
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.getRawValue());
-    console.log("FORMVALUE",this.form.value["hallo"])
+    //console.log("FORMVALUE",this.form.value["hallo"])
+    //console.log("payload",this.payLoad)
   }
-
-  
 
   
 }
 
+export var payLoad:Object
 
 
 /*

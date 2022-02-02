@@ -88,13 +88,7 @@ export class QuestionService {
         type: 'date',
         order: 2
       }),
-      new TextboxQuestion({
-        key: 'color',
-        label: 'color',
-        required: true,
-        type: 'color',
-        order: 2
-      }),
+      
 
     ];
 

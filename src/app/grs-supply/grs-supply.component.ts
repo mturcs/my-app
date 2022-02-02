@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from './question.service';
 import { QuestionBase } from './question-base';
-import { DynamicFormComponent } from './dynamic-form.component'
-import { Observable } from 'rxjs';
+import { DynamicFormComponent,payLoad } from './dynamic-form.component'
+import { Observable, Subscriber } from 'rxjs';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 
@@ -24,9 +24,18 @@ export class GrsSupplyComponent  {
 
   ngOnInit(): void {
     
-  
-    
+    console.log("PAYLOAD",typeof(payLoad))
   }
+
+  ngOnDestroy() {
+    console.log("PAYLOAD",typeof(payLoad))
+  }
+
+  saveClicked() {
+
+    this.questions$.subscribe(x=>{console.log("subscribe",x)})
+      
+    }
 
   
 
@@ -38,7 +47,7 @@ export class UsernameValidator {
           return {cannotContainSpace: true}
       }
 
-      console.log("mycontroll")
+     // console.log("mycontroll",control.value)
 
       return null;
   }
