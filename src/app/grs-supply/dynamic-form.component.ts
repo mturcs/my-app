@@ -24,15 +24,25 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.payLoad = JSON.stringify(this.form.getRawValue());
+    //this.payLoad = JSON.stringify(this.form.getRawValue());
     //console.log("FORMVALUE",this.form.value["hallo"])
-    //console.log("payload",this.payLoad)
+    //console.log("payload",this.payLoad.toString())
+    this.payLoad=this.form.value
+    console.log("FORMpayload",this.payLoad)
   }
+
+  saveClicked() {
+
+    //this.questions$.subscribe(x=>{console.log("subscribe",x)})
+    console.log("clickedPl",this.form.value)
+      
+    }
+
 
   
 }
 
-export var payLoad:Object
+export var payLoad:Object, form:FormGroup
 
 
 /*
